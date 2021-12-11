@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+:root {
+    --mobile-nav-bg: navy;
+}
+
+
+body {
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+
+.primary-nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mobile-nav-button {
+    display: none;
+    z-index: 1000;
+}
+
+@media screen and (max-width: 700px) {
+    .mobile-nav-button {
+        display: block;
+    }
+
+    .primary-nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+
+        padding: min(20vh,10rem) 10rem 0 0;
+        height: 100vh;
+        background-color: var(--mobile-nav-bg);
+        border-radius: 5rem 0 0 0;
+    }
+
+    .primary-nav[data-visible="true"] {
+        transform: translate(0%);
+    }
+
+    .primary-nav ul {
+        flex-direction: column;
+    }
+
+}
+
+
+
+/*Hamburger Button source: https://codepen.io/ainalem/pen/GeMqdP?editors=1100*/
+svg {
+    height: 80px;
+    position: absolute;
+    width: 80px;
+  }
+  .plate {
+    height: 80px;
+    width: 80px;
+  }
+  .burger {
+    filter: url(#gooeyness);
+  }
+  .x {
+    transform: scale(0);
+    transition: transform 400ms;
+  }
+  .line {
+    fill: none;
+    stroke: black;
+    stroke-width: 6px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform-origin: 50%;
+    transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
+  }
+  .x .line {
+    stroke-width: 5.5px;
+  }
+
+.plate4 .x {
+    transition: transform 400ms;
+  }
+  .plate4 .line {
+    transform-origin: 50%;
+    transition: transform 400ms 100ms;
+  }
+  .active.plate4 .line {
+    transition: transform 400ms;
+  }
+  .active.plate4 .line1 {
+    transform: translateX(18px) translateY(-3px) rotate(-45deg) scale(.7);
+  }
+  .active.plate4 .line2 {
+    transform: translateX(-18px) translateY(-3px) rotate(45deg) scale(.7);
+  }
+  .active.plate4 .line3 {
+    transform: translateY(0px) rotate(45deg) scale(.7);
+  }
+  .active.plate4 .line4 {
+    transform: translateY(0px) rotate(-45deg) scale(.7);
+  }
+  .active.plate4 .line5 {
+    transform: translateX(18px) translateY(3px) rotate(45deg) scale(.7);
+  }
+  .active.plate4 .line6 {
+    transform: translateX(-18px) translateY(3px) rotate(-45deg) scale(.7);
+  }
+  .active.plate4 .x {
+    transition: transform 400ms 100ms;
+    transform: scale(1);
+  }
