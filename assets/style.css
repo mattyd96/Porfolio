@@ -1,20 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 
 :root {
+    --max-width: 75rem;
     --mobile-nav-bg: navy;
+    --card-text-bg: white;
 }
 
 
 body {
-    overflow: hidden;
+    overflow-x: hidden;
     font-family: 'Roboto', sans-serif;
 }
 
+
+/* Header */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    max-width: var(--max-width);
+    margin: auto;
 }
 
 
@@ -33,6 +39,7 @@ a {
     z-index: 1000;
 }
 
+/* mobile styling for navbar */
 @media screen and (max-width: 700px) {
     .mobile-nav-button {
         display: block;
@@ -60,67 +67,138 @@ a {
 
 }
 
-
-
 /*Hamburger Button source: https://codepen.io/ainalem/pen/GeMqdP?editors=1100*/
 svg {
     height: 80px;
     position: absolute;
     width: 80px;
-  }
-  .plate {
-    height: 80px;
-    width: 80px;
-  }
-  .burger {
-    filter: url(#gooeyness);
-  }
-  .x {
-    transform: scale(0);
-    transition: transform 400ms;
-  }
-  .line {
-    fill: none;
-    stroke: black;
-    stroke-width: 6px;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    transform-origin: 50%;
-    transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
-  }
-  .x .line {
-    stroke-width: 5.5px;
-  }
+}
+.plate {
+height: 80px;
+width: 80px;
+}
+.burger {
+filter: url(#gooeyness);
+}
+.x {
+transform: scale(0);
+transition: transform 400ms;
+}
+.line {
+fill: none;
+stroke: black;
+stroke-width: 6px;
+stroke-linecap: round;
+stroke-linejoin: round;
+transform-origin: 50%;
+transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
+}
+.x .line {
+stroke-width: 5.5px;
+}
 
 .plate4 .x {
     transition: transform 400ms;
-  }
-  .plate4 .line {
-    transform-origin: 50%;
-    transition: transform 400ms 100ms;
-  }
-  .active.plate4 .line {
-    transition: transform 400ms;
-  }
-  .active.plate4 .line1 {
-    transform: translateX(18px) translateY(-3px) rotate(-45deg) scale(.7);
-  }
-  .active.plate4 .line2 {
-    transform: translateX(-18px) translateY(-3px) rotate(45deg) scale(.7);
-  }
-  .active.plate4 .line3 {
-    transform: translateY(0px) rotate(45deg) scale(.7);
-  }
-  .active.plate4 .line4 {
-    transform: translateY(0px) rotate(-45deg) scale(.7);
-  }
-  .active.plate4 .line5 {
-    transform: translateX(18px) translateY(3px) rotate(45deg) scale(.7);
-  }
-  .active.plate4 .line6 {
-    transform: translateX(-18px) translateY(3px) rotate(-45deg) scale(.7);
-  }
-  .active.plate4 .x {
-    transition: transform 400ms 100ms;
-    transform: scale(1);
-  }
+}
+.plate4 .line {
+transform-origin: 50%;
+transition: transform 400ms 100ms;
+}
+.active.plate4 .line {
+transition: transform 400ms;
+}
+.active.plate4 .line1 {
+transform: translateX(18px) translateY(-3px) rotate(-45deg) scale(.7);
+}
+.active.plate4 .line2 {
+transform: translateX(-18px) translateY(-3px) rotate(45deg) scale(.7);
+}
+.active.plate4 .line3 {
+transform: translateY(0px) rotate(45deg) scale(.7);
+}
+.active.plate4 .line4 {
+transform: translateY(0px) rotate(-45deg) scale(.7);
+}
+.active.plate4 .line5 {
+transform: translateX(18px) translateY(3px) rotate(45deg) scale(.7);
+}
+.active.plate4 .line6 {
+transform: translateX(-18px) translateY(3px) rotate(-45deg) scale(.7);
+}
+.active.plate4 .x {
+transition: transform 400ms 100ms;
+transform: scale(1);
+}
+
+main {
+    max-width: var(--max-width);
+    margin: auto;
+}
+
+/* work section */
+
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    max-height: 35rem;
+    max-width: 100%;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.card .card-text {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    z-index: 10;
+    align-self: end;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    padding: 1rem 2rem;
+    background-color: var(--card-text-bg);
+    max-width: min(20rem, 50%);
+    border-radius: 20rem;
+}
+
+.card img {
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.hero-card {
+    grid-column: 1/3;
+    grid-row: 1/3;
+    background-image: url(./images/calculator.jpg);
+    min-height: 35rem;
+}
+
+.card-2 {
+    background-image: url(./images/todo.jpg);
+}
+
+.card-3 {
+    background-image: url(./images/agency-landing-page.png);
+}
+
+.card-4 {
+    background-image: url(./images/bookmark-landing-page.png);
+}
+
+.card-5 {
+    background-image: url(./images/countdown.png);
+}
+
+.main-link {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+}
