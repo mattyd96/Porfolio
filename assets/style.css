@@ -2,8 +2,15 @@
 
 :root {
     --max-width: 75rem;
+    --mobile-break: 700px;
     --mobile-nav-bg: navy;
     --card-text-bg: white;
+
+    --card-hero-bg: url(./images/calculator.jpg);
+    --card-2-bg: url(./images/todo.jpg);
+    --card-3-bg: url(./images/agency-landing-page.png);
+    --card-4-bg: url(./images/bookmark-landing-page.png);
+    --card-5-bg: url(./images/countdown.png);
 }
 
 
@@ -130,6 +137,7 @@ transition: transform 400ms 100ms;
 transform: scale(1);
 }
 
+/* main body -> contains about, work, contact */
 main {
     max-width: var(--max-width);
     margin: auto;
@@ -141,6 +149,7 @@ main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    gap: 1rem;
 }
 
 .card {
@@ -151,6 +160,7 @@ main {
     max-width: 100%;
     overflow: hidden;
     background-size: cover;
+    border-radius: 1rem;
 }
 
 .card .card-text {
@@ -172,33 +182,57 @@ main {
     grid-row: 1/2;
 }
 
-.hero-card {
-    grid-column: 1/3;
-    grid-row: 1/3;
-    background-image: url(./images/calculator.jpg);
-    min-height: 35rem;
-}
-
-.card-2 {
-    background-image: url(./images/todo.jpg);
-}
-
-.card-3 {
-    background-image: url(./images/agency-landing-page.png);
-}
-
-.card-4 {
-    background-image: url(./images/bookmark-landing-page.png);
-}
-
-.card-5 {
-    background-image: url(./images/countdown.png);
-}
-
 .main-link {
     grid-column: 1/2;
     grid-row: 1/2;
     width: 100%;
     height: 100%;
     z-index: 20;
+}
+
+.hero-card {
+    grid-column: 1/3;
+    grid-row: 1/3;
+    background-image: var(--card-hero-bg);
+    min-height: 35rem;
+}
+
+.card-2 {
+    background-image: var(--card-2-bg);
+}
+
+.card-3 {
+    background-image: var(--card-3-bg);
+}
+
+.card-4 {
+    background-image: var(--card-4-bg);
+}
+
+.card-5 {
+    background-image: var(--card-5-bg);
+}
+
+.card:hover {
+    transform: translateY(-.3rem);
+    box-shadow: 0 .5rem .5rem grey;
+    transition-duration: .1s;
+}
+
+@media screen and (max-width: 700px) {
+    .project-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .hero-card {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .card {
+        min-height: 20rem;
+    }
+
 }
