@@ -130,6 +130,10 @@ a:hover {
         text-align: center;   
     }
 
+    .main-title {
+        margin: 0;
+    }
+
     .sub-title {
         margin: 0;
     }
