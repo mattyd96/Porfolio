@@ -368,8 +368,10 @@ main {
 .contact {
     margin-bottom: 10rem;
 }
+
 .contact-links {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     font-size: 1.2rem;
@@ -404,5 +406,17 @@ footer a {
 @media screen and (max-width: 770px) {
     footer, footer ul {
         flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-links {
+        text-align: center;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    #email {
+        width: 100%;
+        margin: auto;
     }
 }
