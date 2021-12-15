@@ -271,6 +271,9 @@ main {
 .about p {
     color: white;
     opacity: 87%;
+    line-height: 1.6rem;
+    font-size: 1.2rem;
+    /* word-spacing: .1rem; */
 }
 
 /* work section */
