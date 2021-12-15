@@ -2,13 +2,28 @@
 
 
 :root {
-    --max-width: 75rem;
-    --mobile-break: 700px;
-    --mobile-nav-bg: #040405;
-    --main-bg: #121214;
-    --white-text: white;
-    --card-text-bg: white;
+    --max-width: 75rem;           /* max width of whole website */
 
+    --heading-font: 'Bungee', cursive;  /* default font for main headings h1, h2*/
+    --body-font: 'Roboto', sans-serif;  /* default font for general text */
+
+    --mobile-nav-bg: #040405;   /* background color of mobile drop down nav */
+    --main-bg: #121214;         /* background color of entire site */
+    --sub-title-bg: #FF0000;    /* background color for sub title in hero */
+    --card-text-bg: white;      /* background color of title cards on work links */
+
+
+    --default-text: #fff;       /* default text color */
+
+    
+    --link-hover: #ef6b6b;              /* default hover color for all links -> if changed also change --svg-hover*/
+    --svg-hover: brightness(0) 
+    saturate(100%) invert(44%) sepia(55%) 
+    saturate(2200%) hue-rotate(328deg) 
+    brightness(125%) contrast(89%);       /* filter applied for svg elements to have same color as links upon hover */
+    --card-shadow-color: black;         /* shadow colour for work link cards when hovered over */
+
+    /* background images for work link cards, need to change if project it is linked to changes */
     --card-hero-bg: url(./images/calculator.jpg);
     --card-2-bg: url(./images/todo.jpg);
     --card-3-bg: url(./images/agency-landing-page.png);
@@ -19,14 +34,14 @@
 
 body {
     overflow-x: hidden;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--body-font);
     background-color: var(--main-bg);
     padding: 0 1rem;
 }
 
 h2 {
-    font-family: 'Bungee', cursive;
-    color: var(--white-text);
+    font-family: var(--heading-font);
+    color: var(--default-text);
 }
 
 section h2 {
@@ -45,6 +60,7 @@ header {
     margin: auto;
 }
 
+/* Nav */
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -61,11 +77,11 @@ header {
 
 a {
     text-decoration: none;
-    color: var(--white-text);
+    color: var(--default-text);
 }
 
 a:hover {
-    color: #ef6b6b;
+    color: var(--link-hover);
 }
 
 .mobile-nav-button {
@@ -75,11 +91,77 @@ a:hover {
 
 .logo {
     z-index: 1000;
-    font-family: 'Bungee', cursive;
+    font-family: var(--heading-font);
     font-size: 1.7rem;
 }
 
-/*hero section */
+
+/* Styling for Hamburger button */
+/*Hamburger Button source: https://codepen.io/ainalem/pen/GeMqdP?editors=1100*/
+svg {
+    height: 80px;
+    position: absolute;
+    width: 80px;
+}
+.plate {
+    height: 80px;
+    width: 80px;
+}
+.burger {
+    filter: url(#gooeyness);
+}
+.x {
+    transform: scale(0);
+    transition: transform 400ms;
+}
+.line {
+    fill: none;
+    stroke: white;
+    stroke-width: 6px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform-origin: 50%;
+    transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
+}
+.x .line {
+    stroke-width: 5.5px;
+}
+
+.plate4 .x {
+    transition: transform 400ms;
+}
+.plate4 .line {
+    transform-origin: 50%;
+    transition: transform 400ms 100ms;
+}
+.active.plate4 .line {
+    transition: transform 400ms;
+}
+.active.plate4 .line1 {
+    transform: translateX(18px) translateY(-3px) rotate(-45deg) scale(.7);
+}
+.active.plate4 .line2 {
+    transform: translateX(-18px) translateY(-3px) rotate(45deg) scale(.7);
+}
+.active.plate4 .line3 {
+    transform: translateY(0px) rotate(45deg) scale(.7);
+}
+.active.plate4 .line4 {
+    transform: translateY(0px) rotate(-45deg) scale(.7);
+}
+.active.plate4 .line5 {
+    transform: translateX(18px) translateY(3px) rotate(45deg) scale(.7);
+}
+.active.plate4 .line6 {
+    transform: translateX(-18px) translateY(3px) rotate(-45deg) scale(.7);
+}
+.active.plate4 .x {
+    transition: transform 400ms 100ms;
+    transform: scale(1);
+}
+
+
+/* Hero section */
 .hero {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -91,8 +173,8 @@ a:hover {
 .title {
     grid-column: 1/3;
     grid-row: 1/2;
-    font-family: 'Bungee', cursive;
-    color: white;
+    font-family: var(--heading-font);
+    color: var(--default-text);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -106,7 +188,7 @@ a:hover {
 }
 
 .sub-title {
-    background-color: #FF0000;
+    background-color: var(--sub-title-bg);
     font-size: 1.5rem;
     margin: 0 10rem 0 0;
     padding: 0 .2rem;
@@ -124,138 +206,6 @@ a:hover {
     border-radius: 30rem;
 }
 
-@media screen and (max-width: 800px) {
-    .hero {
-        grid-template-columns: 1fr;
-        align-items: end; 
-    }
-
-    .title {
-        grid-column: 1/2;
-        grid-row: 1/2;
-        z-index: 10;
-        margin: auto;
-        text-align: center;
-    }
-
-    .sub-title{
-        margin: 0;
-    }
-
-    .profile-img {
-        grid-column: 1/2;
-        grid-row: 1/2;
-        width: 80vw;
-        margin: auto;
-        opacity: 50%;
-    }
-}
-
-
-/* mobile styling for navbar */
-@media screen and (max-width: 800px) {
-    .mobile-nav-button {
-        display: block;
-    }
-
-    .primary-nav {
-        position: absolute;
-        top: 0;
-        left: 0;
-        transform: translatey(-100%);
-        width: 100%;
-        padding: 6rem 0 0 0;
-        background-color: var(--mobile-nav-bg);
-        border-radius: 0 0 2rem 2rem;
-        z-index: 200;
-    }
-
-    .primary-nav[data-visible="true"] {
-        transform: translate(0%);
-        transition-duration: .5s;
-    }
-
-    .primary-nav ul {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-        margin: 2rem 0;
-    }
-
-    .primary-nav li {
-        margin-top: 1rem;
-    }
-
-}
-
-@media screen and (max-width: 800px) {
-    .main-title {
-        font-size: 14vw;
-    }
-}
-
-/*Hamburger Button source: https://codepen.io/ainalem/pen/GeMqdP?editors=1100*/
-svg {
-    height: 80px;
-    position: absolute;
-    width: 80px;
-}
-.plate {
-height: 80px;
-width: 80px;
-}
-.burger {
-filter: url(#gooeyness);
-}
-.x {
-transform: scale(0);
-transition: transform 400ms;
-}
-.line {
-fill: none;
-stroke: white;
-stroke-width: 6px;
-stroke-linecap: round;
-stroke-linejoin: round;
-transform-origin: 50%;
-transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
-}
-.x .line {
-stroke-width: 5.5px;
-}
-
-.plate4 .x {
-    transition: transform 400ms;
-}
-.plate4 .line {
-transform-origin: 50%;
-transition: transform 400ms 100ms;
-}
-.active.plate4 .line {
-transition: transform 400ms;
-}
-.active.plate4 .line1 {
-transform: translateX(18px) translateY(-3px) rotate(-45deg) scale(.7);
-}
-.active.plate4 .line2 {
-transform: translateX(-18px) translateY(-3px) rotate(45deg) scale(.7);
-}
-.active.plate4 .line3 {
-transform: translateY(0px) rotate(45deg) scale(.7);
-}
-.active.plate4 .line4 {
-transform: translateY(0px) rotate(-45deg) scale(.7);
-}
-.active.plate4 .line5 {
-transform: translateX(18px) translateY(3px) rotate(45deg) scale(.7);
-}
-.active.plate4 .line6 {
-transform: translateX(-18px) translateY(3px) rotate(-45deg) scale(.7);
-}
-.active.plate4 .x {
-transition: transform 400ms 100ms;
-transform: scale(1);
-}
 
 /* main body -> contains about, work, contact */
 main {
@@ -269,7 +219,7 @@ main {
     margin-top: 10rem;
 }
 .about p {
-    color: white;
+    color: var(--default-text);
     opacity: 87%;
     line-height: 1.6rem;
     font-size: 1.2rem;
@@ -351,28 +301,9 @@ main {
 
 .card:hover {
     transform: translateY(-.3rem);
-    box-shadow: 0 .5rem .5rem black;
+    box-shadow: 0 .5rem .5rem var(--card-shadow-color);
     transition-duration: .1s;
 }
-
-@media screen and (max-width: 770px) {
-    .project-cards {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .hero-card {
-        grid-column: 1/2;
-        grid-row: 1/2;
-    }
-
-    .card {
-        min-height: 20rem;
-    }
-
-}
-
 
 /* contact */
 
@@ -391,7 +322,7 @@ main {
 }
 
 .contact-links img:hover {
-    filter: brightness(0) saturate(100%) invert(44%) sepia(55%) saturate(2200%) hue-rotate(328deg) brightness(125%) contrast(89%);
+    filter: var(--svg-hover);
 }
 
 /*footer*/
@@ -415,11 +346,91 @@ footer a {
     text-decoration: none;
 }
 
-@media screen and (max-width: 770px) {
-    footer, footer ul {
+/*----------------------------------------------------------------- Mobile Styling --------------------------------------------*/
+@media screen and (max-width: 800px) {
+
+    /* Nav */
+    .mobile-nav-button {
+        display: block;
+    }
+
+    .primary-nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translatey(-100%);
+        width: 100%;
+        padding: 6rem 0 0 0;
+        background-color: var(--mobile-nav-bg);
+        border-radius: 0 0 2rem 2rem;
+        z-index: 200;
+    }
+
+    .primary-nav[data-visible="true"] {
+        transform: translate(0%);
+        transition-duration: .5s;
+    }
+
+    .primary-nav ul {
         flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 2rem 0;
+    }
+
+    .primary-nav li {
+        margin-top: 1rem;
+    }
+
+    /* Hero */
+
+    .hero {
+        grid-template-columns: 1fr;
+        align-items: end; 
+    }
+
+    .title {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        z-index: 10;
+        margin: auto;
         text-align: center;
     }
+
+    .main-title {
+        font-size: 14vw;
+    }
+
+    .sub-title{
+        margin: 0;
+    }
+
+    .profile-img {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        width: 80vw;
+        margin: auto;
+        opacity: 50%;
+    }
+
+    /* Work */
+
+    .project-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .hero-card {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .card {
+        min-height: 20rem;
+    }
+
+    /* Contact */
 
     .contact-links {
         text-align: center;
@@ -430,5 +441,12 @@ footer a {
     #email {
         width: 100%;
         margin: auto;
+    }
+
+    /* Footer */
+
+    footer, footer ul {
+        flex-direction: column;
+        text-align: center;
     }
 }

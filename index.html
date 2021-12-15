@@ -8,11 +8,18 @@
     <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
+
+        <!-- Navbar -->
         <div class="nav-container">
+
+            <!-- Nav logo -->
             <div class="logo">
                 <a href="#">Matthew Durflinger</a>
             </div>
+
+            <!-- Mobile Nav hamburger button inline svg source: https://codepen.io/ainalem/pen/GeMqdP?editors=1100*-->
             <svg>
                 <defs>
                   <filter id="gooeyness">
@@ -36,7 +43,8 @@
                   <path class="line" d="M 66,32 L 34,68" />
                 </svg>
             </div>
-    
+            
+            <!-- Nav elements -->
             <nav class="primary-nav" data-visible="false" onclick="toggleNav()">
                 <ul>
                     <li><a href="#about">About Me</a></li>
@@ -46,6 +54,8 @@
                 </ul>
             </nav>
         </div>
+
+        <!-- Hero Section -->
         <div class="hero">
             <div class="title">
                 <h1 class="main-title">Portfolio</h1>
@@ -54,9 +64,12 @@
             <div class="profile-img">
                 <img src="./assets/images/profile.jpg" alt="me looking out over snow covered valley with my snowboard.">
             </div>
-        </div> 
+        </div>
+
     </header>
     <main>
+
+        <!-- About Me -->
         <section class="about" id="about">
             <h2>About Me</h2>
             <p>
@@ -74,9 +87,13 @@
                 Thankyou for checking out my Portfolio, I hope you enjoy the projects I have completed so far!
             </p>
         </section>
+
+        <!-- Work -->
         <section class="work" id="work">
             <h2>Work</h2>
             <div class="project-cards">
+
+                <!-- Hero project -> put my best one here -->
                 <article class="card hero-card">
                     <a href="https://elastic-hawking-e589ed.netlify.app" class="main-link" target="blank"></a>
                     <div class="card-text">
@@ -84,6 +101,8 @@
                         <p class="card-sub-text">Javascript, Sass, and HTML</p>
                     </div>
                 </article>
+
+                <!-- Project 2 -->
                 <article class="card card-2">
                     <a href="https://zen-spence-1e582f.netlify.app" class="main-link" target="blank"></a>
                     <div class="card-text">
@@ -91,6 +110,8 @@
                         <p class="card-sub-text">Javascript, Sass, and HTML</p>
                     </div>
                 </article>
+
+                <!-- Project 3 -->
                 <article class="card card-3">
                     <a href="https://competent-curran-7e763a.netlify.app/" class="main-link" target="blank"></a>
                     <div class="card-text">
@@ -98,6 +119,8 @@
                         <p class="card-sub-text">Javascript, Sass, and HTML</p>
                     </div>
                 </article>
+
+                <!-- Project 4 -->
                 <article class="card card-4">
                     <a href="https://hopeful-perlman-c4833d.netlify.app/" class="main-link" target="blank"></a>
                     <div class="card-text">
@@ -105,6 +128,8 @@
                         <p class="card-sub-text">Javascript, Sass, and HTML</p>
                     </div>
                 </article>
+
+                <!-- Project 5 -->
                 <article class="card card-5">
                     <a href="https://jovial-davinci-7603fe.netlify.app/" class="main-link" target="blank"></a>
                     <div class="card-text">
@@ -112,8 +137,11 @@
                         <p class="card-sub-text">Javascript, Sass, and HTML</p>
                     </div>
                 </article>
+
             </div>
         </section>
+
+        <!-- contact me -->
         <section class="contact" id="contact">
             <h2>Contact Me</h2>
             <div class="contact-links">
@@ -122,7 +150,10 @@
                 <a href="https://www.linkedin.com/in/matthew-durflinger-903429140/"><img src="./assets/svg/linkedin.svg" alt=""></a>
             </div>
         </section>
+
     </main>
+
+    <!-- Footer -->
     <footer>
         <div class="logo">
             <a href="#">Matthew Durflinger</a>
@@ -133,11 +164,12 @@
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="">Resume</a></li>
+                <li><a href="#">Resume</a></li>
             </ul>
         </nav>
     </footer>
 
-    <script src="./index.js"></script>
+    <!-- Javascript Link -->
+    <script src="./script.js"></script>
 </body>
 </html>
