@@ -123,7 +123,7 @@ a:hover {
 @media screen and (max-width: 800px) {
     .hero {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
+        align-items: end; 
     }
 
     .title {
@@ -131,28 +131,25 @@ a:hover {
         grid-row: 1/2;
         z-index: 10;
         margin: auto;
-        text-align: center;   
+        text-align: center;
     }
 
-    .main-title {
-        margin: 0;
-    }
-
-    .sub-title {
+    .sub-title{
         margin: 0;
     }
 
     .profile-img {
         grid-column: 1/2;
         grid-row: 1/2;
-        width: 70vw;
+        width: 80vw;
         margin: auto;
+        opacity: 50%;
     }
 }
 
 
 /* mobile styling for navbar */
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 800px) {
     .mobile-nav-button {
         display: block;
     }
@@ -185,6 +182,12 @@ a:hover {
         margin-top: 1rem;
     }
 
+}
+
+@media screen and (max-width: 800px) {
+    .main-title {
+        font-size: 14vw;
+    }
 }
 
 /*Hamburger Button source: https://codepen.io/ainalem/pen/GeMqdP?editors=1100*/
