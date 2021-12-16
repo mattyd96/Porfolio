@@ -4,7 +4,7 @@ This is my portfolio to showcase my work and gained skills in web development. T
 
 This porfolio has been developed during a Full-stack bootcamp and complies with the  following Acceptance criteria
 
-GIVEN I need to sample a potential employee's previous work 
+GIVEN I need to sample a potential employee's previous work  
 WHEN I load their portfolio  
 THEN I am presented with the developer's name, a recent photo or avatar, and links to sections about them, their work, and how to contact them  
 WHEN I click one of the links in the navigation  
