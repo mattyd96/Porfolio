@@ -24,11 +24,14 @@
     --card-shadow-color: black;         /* shadow colour for work link cards when hovered over */
 
     /* background images for work link cards, need to change if project it is linked to changes */
-    --card-hero-bg: url(./images/calculator.jpg);
-    --card-2-bg: url(./images/todo.jpg);
-    --card-3-bg: url(./images/agency-landing-page.png);
-    --card-4-bg: url(./images/bookmark-landing-page.png);
-    --card-5-bg: url(./images/countdown.png);
+    --card-hero-bg: url(./images/planet-forecast.png);
+    --card-2-bg: url(./images/weather-dashboard.png);
+    --card-3-bg: url(./images/javascript-quiz.png);
+    --card-4-bg: url(./images/calculator.jpg);
+    --card-5-bg: url(./images/todo.jpg);
+    --card-6-bg: url(./images/agency-landing-page.png);
+    --card-7-bg: url(./images/bookmark-landing-page.png);
+    --card-8-bg: url(./images/countdown.png);
 }
 
 
@@ -232,7 +235,7 @@ main {
 .project-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     gap: 1rem;
 }
 
@@ -297,6 +300,18 @@ main {
 
 .card-5 {
     background-image: var(--card-5-bg);
+}
+
+.card-6 {
+    background-image: var(--card-6-bg);
+}
+
+.card-7 {
+    background-image: var(--card-7-bg);
+}
+
+.card-8 {
+    background-image: var(--card-8-bg);
 }
 
 .card:hover {
