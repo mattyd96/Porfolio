@@ -24,11 +24,7 @@ THEN I am presented with a responsive layout that adapts to my viewport
 
 ![image](./Screenshot.png)
 
-<br/><br/>
 
-## Notes
-
-The resume link will lead to nowhere for now, as the resume is still a work in progress.
 
 <br/><br/>
 
